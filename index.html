@@ -1,22 +1,232 @@
-<!DOCTYPE html>
+
+
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Stella Ruzinov – Resume</title>
-
-  <!-- Instant redirect -->
-  <meta http-equiv="refresh" content="0; url=https://muddy-poetry-6c79.stella-ruzinov.workers.dev/" />
-
-  <!-- Backup for browsers that ignore meta refresh -->
-  <script>
-    window.location.replace("https://muddy-poetry-6c79.stella-ruzinov.workers.dev/");
-  </script>
+  <title>Stella Meksin-Ruzinov | Resume</title>
+  <style>
+    :root { --text:#1f2937; --muted:#4b5563; --border:#e5e7eb; --bg:#ffffff; --chip:#f3f4f6; }
+    body { margin:0; background:#f8fafc; color:var(--text); font-family: Arial, sans-serif; line-height:1.5; }
+    .page { max-width: 980px; margin: 24px auto; background: var(--bg); border:1px solid var(--border); border-radius: 14px; overflow:hidden; }
+    header { padding: 28px 28px 18px; border-bottom:1px solid var(--border); display:flex; gap:18px; align-items:center; flex-wrap:wrap; }
+    .avatar { width: 140px; height:140px; border-radius: 999px; object-fit: contain; border: 1px solid var(--border); background: #fff; }
+    .hgroup { flex: 1; min-width: 260px; }
+    h1 { margin:0; font-size: 30px; letter-spacing: .2px; }
+    .subtitle { margin-top:6px; color: var(--muted); font-weight: 600; }
+    .contact { margin-top:10px; color: var(--muted); font-size: 14px; display:flex; flex-wrap:wrap; gap:10px 14px; }
+    .contact a { color: inherit; text-decoration:none; border-bottom: 1px dotted var(--border); }
+    main { padding: 18px 28px 28px; }
+    section { margin-top: 18px; }
+    h2 { font-size: 16px; letter-spacing: .8px; text-transform: uppercase; margin: 22px 0 10px; padding-top: 6px; border-top: 1px solid var(--border); }
+    .lead { margin: 0; color: var(--text); }
+    .role { padding: 12px 0; border-bottom: 1px solid var(--border); }
+    .role:last-child { border-bottom: none; }
+    .role-head { display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+    .role-title { font-weight: 700; }
+    .role-meta { color: var(--muted); font-size: 14px; }
+    ul { margin: 8px 0 0 18px; padding: 0; }
+    li { margin: 6px 0; }
+    .chips { display:flex; flex-wrap:wrap; gap:8px; margin-top: 8px; }
+    .chip { background: var(--chip); border:1px solid var(--border); border-radius: 999px; padding: 6px 10px; font-size: 13px; color: var(--text); }
+    .grid { display:grid; grid-template-columns: 1fr 1fr; gap: 14px 24px; }
+    @media (max-width: 760px){ .grid { grid-template-columns: 1fr; } header { padding: 22px; } main { padding: 12px 22px 22px; } }
+    .note { color: var(--muted); font-size: 13px; margin-top: 8px; }
+    .print { margin-top: 12px; font-size: 13px; color: var(--muted); }
+  </style>
 </head>
+
 <body>
+  <div class="page">
+    <header>
+      <!-- Optional: upload a profile photo to /var/www/html/profile.jpg -->
+      <img class="avatar" src="profile.jpg" alt="Profile photo (optional)" onerror="this.style.display='none'">
+      <div class="hgroup">
+        <h1>Stella Meksin-Ruzinov, B.S.</h1>
+        <div class="subtitle">Information Security • SOC • Healthcare IT</div>
+        <div class="contact">
+          <span>USA</span>
+          <span>📧 <a href="mailto:stella.ruzinov@gmail.com">stella.ruzinov@gmail.com</a></span>
+       <span>🔗 <a href="https://www.linkedin.com/in/stella-meksin-ruzinov-15a863179/" target="_blank">LinkedIn</a></span>
+   <!-- Add your LinkedIn if you want -->
+          <!-- <span>🔗 <a href="https://www.linkedin.com/in/YOUR-LINK" target="_blank" rel="noopener">LinkedIn</a></span> -->
+        </div>
+        <div class="print">Hosted on Raspberry Pi (Nginx)</div>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <h2>Professional Profile</h2>
+        <p class="lead">
+          Results-driven information security professional with hands-on experience in SIEM monitoring (Splunk, JumpCloud),
+          digital forensics (FTK, Autopsy), and NIST 800-53A compliance implementation. Successfully lead SOC teams in controlled
+          cybersecurity simulations during the Cyber-Nomad internship program to strengthen organizational threat response,
+          identify system vulnerabilities, and implement HIPAA-aligned security policies that safeguard healthcare operations.
+        </p>
+      </section>
+
+      <section>
+        <h2>Professional Experience</h2>
+
+        <div class="role">
+          <div class="role-head">
+            <div>
+              <div class="role-title">Cybersecurity &amp; IT Lead | Alexander Ayzenberg Dentistry PC – Brooklyn, NY</div>
+            </div>
+            <div class="role-meta">Feb 2016 – Present</div>
+          </div>
+          <ul>
+            <li>Lead cybersecurity and IT operations for a multi-provider dental practice, ensuring HIPAA compliance and strong data protection standards.</li>
+            <li>Configure and manage Active Directory, implementing MFA, GPOs, and access controls to enforce least-privilege policies.</li>
+            <li>Develop and maintain cybersecurity policies, including Access Control, Data Retention, and Incident Response documentation aligned with NIST 800-53A standards.</li>
+            <li>Manage Cisco ASA Firewall, Snort IDS, Windows Defender ATP, and Sophos Antivirus to maintain secure network and endpoint protection.</li>
+            <li>Conduct regular Nessus vulnerability scans, addressing configuration weaknesses and strengthening endpoint security.</li>
+          </ul>
+        </div>
+
+        <div class="role">
+          <div class="role-head">
+            <div class="role-title">SOC Analyst | Team Lead (Internship Phase II) | Cyber-Nomad (formerly Cyvergance.AI) – Remote</div>
+            <div class="role-meta">Mar 2023 – Jun 2023</div>
+          </div>
+          <ul>
+            <li>Directed SOC operations using Splunk Enterprise SIEM and JumpCloud Directory Insights to detect and mitigate potential security threats.</li>
+            <li>Developed and fine-tuned alerting rules for RDP brute force attempts, PowerShell anomalies, and DNS tunneling to enhance visibility and response speed.</li>
+            <li>Investigated phishing campaigns and malware indicators using PhishTool, VirusTotal, and sandbox environments to validate and contain threats.</li>
+            <li>Authored incident response reports under the NIST 800-53A framework to support compliance validation, coordinate remediation, and ensure consistent post-incident follow-up.</li>
+          </ul>
+        </div>
+
+        <div class="role">
+          <div class="role-head">
+            <div class="role-title">Cybersecurity Specialist | Team Lead (Internship Phase I) | Cyber-Nomad (formerly Cyvergance.AI) – Remote</div>
+            <div class="role-meta">Dec 2022 – Mar 2023</div>
+          </div>
+          <ul>
+            <li>Performed organizational security assessments mapped to ISO/IEC 27001 and NIST Cybersecurity Framework controls.</li>
+            <li>Authored and implemented Password and Patch Management policies addressing critical vulnerabilities in enterprise systems.</li>
+          </ul>
+        </div>
+
+        <div class="role">
+          <div class="role-head">
+            <div class="role-title">IT &amp; Operations Support | Grobstin Investigations – Brooklyn, NY</div>
+            <div class="role-meta">Jan 2011 – Jan 2016</div>
+          </div>
+          <ul>
+            <li>Supported daily IT operations, managed desktop systems, printers, and shared drives to minimize downtime and ensure efficient investigations.</li>
+            <li>Maintained and organized digital case files, ensuring secure storage, controlled access, and regular backup procedures.</li>
+            <li>Assisted investigators with technology setup, secure communications, and encrypted data transfers for sensitive information handling.</li>
+            <li>Monitored antivirus updates, firewall configurations, and software licensing to maintain compliance and system reliability.</li>
+            <li>Collaborated with vendors to troubleshoot hardware issues, coordinate upgrades, and enhance operational performance.</li>
+          </ul>
+        </div>
+
+        <div class="role">
+          <div class="role-head">
+            <div class="role-title">Systems Administrator | Cosmetic &amp; Pediatric Dentistry Center – Brooklyn, NY</div>
+            <div class="role-meta">Dec 2008 – Dec 2010</div>
+          </div>
+          <ul>
+            <li>Administered Windows Server 2003/2008 environments, managing DNS, DHCP, and user provisioning to maintain network integrity.</li>
+            <li>Migrated patient records to a NAS with RAID configuration, implementing file permissions and data recovery validation.</li>
+            <li>Implemented BitLocker encryption across all endpoints and maintained key escrow management in Active Directory.</li>
+          </ul>
+        </div>
+
+        <div class="role">
+          <div class="role-head">
+            <div class="role-title">IT Support Specialist | Cosmetic Dentistry of NY – New York, NY</div>
+            <div class="role-meta">May 2005 – Nov 2008</div>
+          </div>
+          <ul>
+            <li>Delivered end-user technical support across Windows-based systems, ensuring consistent functionality of Open Dental and imaging applications.</li>
+            <li>Installed and configured firewalls and antivirus software to maintain secure and stable computing environments.</li>
+            <li>Oversaw data backup operations and performed recovery tests to ensure business continuity.</li>
+            <li>Trained staff on data protection procedures, HIPAA compliance, and best practices for password security.</li>
+          </ul>
+          <p class="note">Note: This role appears twice in the PDF; included once here to avoid duplication.</p>
+        </div>
+
+      </section>
+
+      <section class="grid">
+        <div>
+          <h2>Projects</h2>
+          <ul>
+         <div class="role">
+  <div class="role-head">
+    <div class="role-title">Self-Hosted Resume Website (Raspberry Pi + Linux + Nginx)</div>
+    <div class="role-meta">2026</div>
+  </div>
+
+  <ul>
+    <li>Built and self-hosted a personal resume website on a Raspberry Pi running Linux, configuring Nginx for static site delivery.</li>
+    <li>Managed file permissions, directory structure, and web server troubleshooting directly on the device.</li>
+    <li>Deployed a secure public HTTPS mirror via Cloudflare Pages for external access.</li>
+    <li>Implemented a GitHub Pages redirect to ensure compatibility with external platforms such as LinkedIn.</li>
+  </ul>
+
   <p>
-    Redirecting to my resume… If you are not redirected automatically,
-    <a href="https://muddy-poetry-6c79.stella-ruzinov.workers.dev/">click here</a>.
+    <strong>Live site:</strong>
+    <a href="https://stell1126.github.io/stellaruzinov.github.io/" target="_blank">
+      https://stell1126.github.io/stellaruzinov.github.io/
+    </a>
   </p>
+</div>
+   <li>White Paper: Developed analysis applying SANS CIS Critical Security Controls to improve organizational security maturity.</li>
+            <li>Digital Forensics Investigation: Conducted digital evidence analysis using FTK and Autopsy with data validation through cryptographic hashing.</li>
+            <li>Dental Practice Software Build: Designed and implemented a HIPAA-compliant dental practice management prototype using Django (Python) and Swift/Xcode.</li>
+            <li>Network Security Risk Assessment: Evaluated simulated enterprise vulnerabilities and implemented layered defenses to enhance resilience.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2>Education</h2>
+          <p class="lead"><strong>Bachelor of Science – Computer Science (Cybersecurity Focus)</strong><br>
+          Maryville University, Aug 2023</p>
+
+          <h2>Certifications</h2>
+          <ul>
+            <li>JumpCloud Core Directory Certification</li>
+            <li>Splunk Fundamentals 1</li>
+            <li>SAP Cybersecurity Engineering (Virtual Internship)</li>
+            <li>ISC² Certified in Cybersecurity (CC) – Self-Paced Training</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>Technical Proficiencies</h2>
+        <div class="chips">
+          <span class="chip">Splunk</span>
+          <span class="chip">JumpCloud</span>
+          <span class="chip">Nessus</span>
+          <span class="chip">Snort IDS</span>
+          <span class="chip">FTK</span>
+          <span class="chip">EnCase</span>
+          <span class="chip">Qualys</span>
+          <span class="chip">Rapid7</span>
+          <span class="chip">PhishTool</span>
+          <span class="chip">Python</span>
+          <span class="chip">C++</span>
+          <span class="chip">Java</span>
+          <span class="chip">SQL</span>
+          <span class="chip">Swift</span>
+          <span class="chip">R</span>
+          <span class="chip">NIST 800-53A</span>
+          <span class="chip">ISO/IEC 27001</span>
+          <span class="chip">HIPAA</span>
+          <span class="chip">CIS Controls</span>
+          <span class="chip">Open Dental</span>
+          <span class="chip">Zendesk</span>
+          <span class="chip">Metaversity EdTech</span>
+          <span class="chip">ServiceNow</span>
+          <span class="chip">JIRA</span>
+        </div>
+      </section>
+    </main>
+  </div>
 </body>
 </html>
