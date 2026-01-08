@@ -1,0 +1,383 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stella Meksin-Ruzinov — Digital Business Card</title>
+
+  <style>
+    :root{
+      --bg1:#0b1220;
+      --bg2:#0f2a3a;
+      --card:rgba(255,255,255,.10);
+      --stroke:rgba(255,255,255,.18);
+      --text:#eaf2ff;
+      --muted:rgba(234,242,255,.75);
+      --accent:#7ee6ff;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(900px 500px at 20% 10%, rgba(126,230,255,.25), transparent 60%),
+        radial-gradient(700px 450px at 85% 25%, rgba(110,231,183,.18), transparent 55%),
+        linear-gradient(135deg, var(--bg1), var(--bg2));
+      overflow:hidden;
+    }
+
+    /* Floating gadgets layer */
+    .float-layer{
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      opacity:.18;
+      filter: blur(0.2px);
+    }
+    .float{
+      position:absolute;
+      font-size:28px;
+      animation: drift 10s ease-in-out infinite;
+      text-shadow: 0 8px 20px rgba(0,0,0,.35);
+    }
+    .float:nth-child(1){left:8%; top:18%; animation-duration:11s}
+    .float:nth-child(2){left:16%; top:72%; animation-duration:13s}
+    .float:nth-child(3){left:78%; top:22%; animation-duration:12s}
+    .float:nth-child(4){left:86%; top:64%; animation-duration:14s}
+    .float:nth-child(5){left:48%; top:10%; animation-duration:15s}
+    .float:nth-child(6){left:52%; top:82%; animation-duration:12.5s}
+
+    @keyframes drift{
+      0%{ transform: translateY(0) translateX(0) rotate(0deg); }
+      50%{ transform: translateY(-18px) translateX(10px) rotate(4deg); }
+      100%{ transform: translateY(0) translateX(0) rotate(0deg); }
+    }
+
+    /* Card */
+    .card{
+      width:min(520px, 100%);
+      position:relative;
+      border:1px solid var(--stroke);
+      background: linear-gradient(180deg, rgba(255,255,255,.14), rgba(255,255,255,.08));
+      border-radius:20px;
+      padding:22px 22px 18px;
+      box-shadow: 0 18px 50px rgba(0,0,0,.35);
+      backdrop-filter: blur(10px);
+    }
+
+    /* Profile pic corner */
+    .avatar{
+      position:absolute;
+      top:16px;
+      right:16px;
+      width:78px;
+      height:78px;
+      border-radius:16px;
+      object-fit:cover;
+      border:1px solid rgba(255,255,255,.35);
+      box-shadow: 0 10px 25px rgba(0,0,0,.35);
+    }
+
+    h1{
+      margin:0 0 6px;
+      font-size:22px;
+      letter-spacing:.2px;
+      padding-right:92px; /* makes room for avatar */
+    }
+    .tagline{
+      margin:0 0 18px;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.4;
+      padding-right:92px;
+    }
+
+    .chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin: 0 0 16px;
+    }
+    .chip{
+      font-size:12px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(0,0,0,.18);
+      color: rgba(234,242,255,.88);
+    }
+
+    .btn{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      width:100%;
+      margin:10px 0;
+      padding:12px 12px;
+      border-radius:14px;
+      text-decoration:none;
+      border:1px solid rgba(255,255,255,.20);
+      background: rgba(0,0,0,.18);
+      color: var(--text);
+      transition: transform .08s ease, border-color .2s ease, background .2s ease;
+      font-weight:600;
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      border-color: rgba(126,230,255,.55);
+      background: rgba(0,0,0,.26);
+    }
+    .btn small{
+      font-weight:600;
+      color: rgba(234,242,255,.8);
+    }
+
+    .footer{
+      margin-top:14px;
+      font-size:12px;
+      color: rgba(234,242,255,.65);
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .footer a{ color: rgba(126,230,255,.9); text-decoration:none; }
+    .footer a:hover{ text-decoration:underline; }
+
+    /* Mobile tweaks */
+    @media (max-width:420px){
+      .avatar{ width:64px; height:64px; border-radius:14px; }
+      h1, .tagline{ padding-right:78px; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Floating tech/security gadgets -->
+  <div class="float-layer" aria-hidden="true">
+    <div class="float">🛡️</div>
+    <div class="float">🔒</div>
+    <div class="float">🖥️</div>
+    <div class="float">📡</div>
+    <div class="float">🧪</div>
+    <div class="float">🔍</div>
+  </div>
+
+  <main class="card">
+    <!-- Uses your existing photo in /var/www/html/profile.jpg -->
+    <img class="avatar" src="../profile.jpg" alt="Stella headshot" onerror="this.style.display='none'">
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stella Meksin-Ruzinov — Digital Business Card</title>
+
+  <style>
+    :root{
+      --bg1:#0b1220;
+      --bg2:#0f2a3a;
+      --card:rgba(255,255,255,.10);
+      --stroke:rgba(255,255,255,.18);
+      --text:#eaf2ff;
+      --muted:rgba(234,242,255,.75);
+      --accent:#7ee6ff;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(900px 500px at 20% 10%, rgba(126,230,255,.25), transparent 60%),
+        radial-gradient(700px 450px at 85% 25%, rgba(110,231,183,.18), transparent 55%),
+        linear-gradient(135deg, var(--bg1), var(--bg2));
+      overflow:hidden;
+    }
+
+    /* Floating gadgets layer */
+    .float-layer{
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      opacity:.18;
+      filter: blur(0.2px);
+    }
+    .float{
+      position:absolute;
+      font-size:28px;
+      animation: drift 10s ease-in-out infinite;
+      text-shadow: 0 8px 20px rgba(0,0,0,.35);
+    }
+    .float:nth-child(1){left:8%; top:18%; animation-duration:11s}
+    .float:nth-child(2){left:16%; top:72%; animation-duration:13s}
+    .float:nth-child(3){left:78%; top:22%; animation-duration:12s}
+    .float:nth-child(4){left:86%; top:64%; animation-duration:14s}
+    .float:nth-child(5){left:48%; top:10%; animation-duration:15s}
+    .float:nth-child(6){left:52%; top:82%; animation-duration:12.5s}
+
+    @keyframes drift{
+      0%{ transform: translateY(0) translateX(0) rotate(0deg); }
+      50%{ transform: translateY(-18px) translateX(10px) rotate(4deg); }
+      100%{ transform: translateY(0) translateX(0) rotate(0deg); }
+    }
+
+    /* Card */
+    .card{
+      width:min(520px, 100%);
+      position:relative;
+      border:1px solid var(--stroke);
+      background: linear-gradient(180deg, rgba(255,255,255,.14), rgba(255,255,255,.08));
+      border-radius:20px;
+      padding:22px 22px 18px;
+      box-shadow: 0 18px 50px rgba(0,0,0,.35);
+      backdrop-filter: blur(10px);
+    }
+
+    /* Profile pic corner */
+    .avatar{
+      position:absolute;
+      top:16px;
+      right:16px;
+      width:78px;
+      height:78px;
+      border-radius:16px;
+      object-fit:cover;
+      border:1px solid rgba(255,255,255,.35);
+      box-shadow: 0 10px 25px rgba(0,0,0,.35);
+    }
+
+    h1{
+      margin:0 0 6px;
+      font-size:22px;
+      letter-spacing:.2px;
+      padding-right:92px; /* makes room for avatar */
+    }
+    .tagline{
+      margin:0 0 18px;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.4;
+      padding-right:92px;
+    }
+
+    .chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin: 0 0 16px;
+    }
+    .chip{
+      font-size:12px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(0,0,0,.18);
+      color: rgba(234,242,255,.88);
+    }
+
+    .btn{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      width:100%;
+      margin:10px 0;
+      padding:12px 12px;
+      border-radius:14px;
+      text-decoration:none;
+      border:1px solid rgba(255,255,255,.20);
+      background: rgba(0,0,0,.18);
+      color: var(--text);
+      transition: transform .08s ease, border-color .2s ease, background .2s ease;
+      font-weight:600;
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      border-color: rgba(126,230,255,.55);
+      background: rgba(0,0,0,.26);
+    }
+    .btn small{
+      font-weight:600;
+      color: rgba(234,242,255,.8);
+    }
+
+    .footer{
+      margin-top:14px;
+      font-size:12px;
+      color: rgba(234,242,255,.65);
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .footer a{ color: rgba(126,230,255,.9); text-decoration:none; }
+    .footer a:hover{ text-decoration:underline; }
+
+    /* Mobile tweaks */
+    @media (max-width:420px){
+      .avatar{ width:64px; height:64px; border-radius:14px; }
+      h1, .tagline{ padding-right:78px; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Floating tech/security gadgets -->
+  <div class="float-layer" aria-hidden="true">
+    <div class="float">🛡️</div>
+    <div class="float">🔒</div>
+    <div class="float">🖥️</div>
+    <div class="float">📡</div>
+    <div class="float">🧪</div>
+    <div class="float">🔍</div>
+  </div>
+
+  <main class="card">
+    <!-- Uses your existing photo in /var/www/html/profile.jpg -->
+    <img class="avatar" src="../profile.jpg" alt="Stella headshot" onerror="this.style.display='none'">
+
+    <h1>Stella Meksin-Ruzinov</h1>
+    <p class="tagline">Information Security Analyst | SOC Leadership, SIEM Monitoring & Healthcare Compliance</p>
+
+    <div class="chips">
+      <span class="chip">Linux</span>
+      <span class="chip">Nginx</span>
+      <span class="chip">Splunk</span>
+      <span class="chip">Incident Response</span>
+      <span class="chip">HIPAA</span>
+    </div>
+
+    <a class="btn" href="mailto:stella.ruzinov@gmail.com">✉️ <span>Email</span> <small>stella.ruzinov@gmail.com</small></a>
+
+    <a class="btn" href="https://www.linkedin.com/in/stella-meksin-ruzinov-15a863179/" target="_blank" rel="noopener">
+      🔗 <span>LinkedIn</span>
+    </a>
+
+    <a class="btn" href="https://stell1126.github.io/stellaruzinov.github.io/" target="_blank" rel="noopener">
+      🌐 <span>Resume Website</span>
+    </a>
+
+    <div class="footer">
+      <span>Hosted on Raspberry Pi + Nginx</span>
+      <span><a href="http://192.168.1.31/" target="_blank" rel="noopener">Local</a> • <a href="https://stell1126.github.io/stellaruzinov.github.io/" target="_blank" rel="noopener">Public</a></span>
+    </div>
+  </main>
+</body>
+</html>
