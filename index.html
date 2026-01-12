@@ -7,6 +7,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Stella Meksin-Ruzinov | Resume</title>
   <style>
+    .project-images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.project-images img {
+  max-width: 100%;
+  width: 260px;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+}
+
     :root { --text:#1f2937; --muted:#4b5563; --border:#e5e7eb; --bg:#ffffff; --chip:#f3f4f6; }
     body { margin:0; background:#f8fafc; color:var(--text); font-family: Arial, sans-serif; line-height:1.5; }
     .page { max-width: 980px; margin: 24px auto; background: var(--bg); border:1px solid var(--border); border-radius: 14px; overflow:hidden; }
@@ -168,6 +182,12 @@
     <li>Deployed a secure public HTTPS mirror via Cloudflare Pages for external access.</li>
     <li>Implemented a GitHub Pages redirect to ensure compatibility with external platforms such as LinkedIn.</li>
   </ul>
+  <div class="project-images">
+  <img src="images/splunk-syslog-events.png" alt="Splunk syslog events indexed in main">
+  <img src="images/splunk-tcp-input.png" alt="Splunk TCP input configuration port 1514">
+  <img src="images/rsyslog-forwarding.png" alt="rsyslog TCP forwarding configuration">
+</div>
+         
 
   <p>
     <strong>Live site:</strong>
